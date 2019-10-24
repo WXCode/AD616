@@ -31,3 +31,5 @@ To add a terminal node, use the tree that was created and define the parent node
 
 
 
+## Acknowledgements
+We make use of the data.tree package heavily in creating the graphical models. We also use stats package and R6 package for creating the utility functions
