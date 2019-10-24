@@ -4,7 +4,7 @@ The primary purpose of this package is to allow you to build decision trees and 
 
 ## Installing and loading the Package
 You can install the package using the `devtools` package in R. 
-`devtools::install_github("WXCode/AD616")
+`devtools::install_github("WXCode/AD616")`
 and then load the package with the `library` command
 `library (AD616)`
 
