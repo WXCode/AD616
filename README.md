@@ -19,4 +19,13 @@ The package allows you to build a decision Tree with the following options
 - Terminal Nodes
     - Terminal Nodes are outcomes which will have payoffs associated with them
 
+### Creating a new Tree
+Use `new` method to create and initialize the new tree
+    `new_tree <- Tree$new('newTree')`
+##### Adding a chance node
+To add a chance node, use the tree that was created and define the parent node where the Chance node needs to connect to. A chance is an experiment and there is always a cost attached to it. 
+    `new_tree$addChance(name='chance_1',parent='new_tree',route='Yes',cost=20)`
+
+
+
 

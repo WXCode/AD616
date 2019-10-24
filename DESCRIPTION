@@ -1,15 +1,18 @@
 Package: AD616
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Title: Decision Trees and Stochastic Optimization
+Version: 0.2.0
+Author: Ravi Doddavaram
+Maintainer: The package maintainer <ravid@bu.edu>
+Description: This is a part of the AD616 course on Enterprise Risk Analytics. The package uses the 
+             data.tree package extensively along with R6 package and provides graphing utility as 
+             well as stochastic options for simulation and EMV calculation and uncertainty analysis.
+License: GNU
 Encoding: UTF-8
 LazyData: true
 Imports: 
-  data.tree
+  data.tree,
+  R6
 Depends:
-  data.tree
+  data.tree,
+  R6

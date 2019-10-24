@@ -1,4 +1,4 @@
-remove(list=ls())
+source('R/utility.R')
 library(R6)
 library(data.tree)
 '%ni%' <- Negate('%in%')
@@ -87,11 +87,5 @@ Tree <- R6Class("Decision Trees", list(
   )
 )
 
-b <- Tree$new('VentureCapital',type='decision')
-b$addChance(name = 'test1',pNode = 'VentureCapital',cost = 0,route = "yes")
-b$addTerminal(pNode = 'test1',name = 'not_good',prob = 0.5,payoff = 110)
-b$addTerminal(pNode = 'test1',name = 'good',prob = 0.5,payoff = 100)
 
 
-b$plot_graph()
-b$update_payoff()
