@@ -25,7 +25,9 @@ Use `new` method to create and initialize the new tree
 ##### Adding a chance node
 To add a chance node, use the tree that was created and define the parent node where the Chance node needs to connect to. A chance is an experiment and there is always a cost attached to it. 
     `new_tree$addChance(name='chance_1',parent='new_tree',route='Yes',cost=20)`
-
+##### Adding a terminal node
+To add a terminal node, use the tree that was created and define the parent node where the terminal node needs to connect to. A terminal is an experiment and there is always a payoff attached to it. 
+    `new_tree$addChance(name='term_1',parent='chance_1',prob,payoff)`
 
 
 
