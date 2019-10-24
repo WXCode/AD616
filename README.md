@@ -1,14 +1,14 @@
-##AD616 Course helper Package
+## AD616 Course helper Package
 This is a helper package for the AD616 course in Enterprise Risk Analytics at BU. 
 The primary purpose of this package is to allow you to build decision trees and do sensitivity analysis on the decision trees.
 
-##Installing and loading the Package
+## Installing and loading the Package
 You can install the package using the `devtools` package in R. 
 `devtools::install_github("WXCode/AD616")
 and then load the package with the `library` command
 `library (AD616)`
 
-##Usage
+## Usage
 The package allows you to build a decision Tree with the following options
 - Root Node
     - The Root node is by default a decision node.
