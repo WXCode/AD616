@@ -1,3 +1,5 @@
+rm(list=ls())
+setwd("C:/Users/ravid/Documents/Work/AD616/package/AD616")
 source('R/utility.R')
 library(R6)
 library(data.tree)
@@ -41,7 +43,7 @@ Tree <- R6Class("Decision Trees", list(
   addDecision = function(pNode,name,prob,route=''){
     stopifnot(is.character(name), length(name) == 1)
     stopifnot(is.character(pNode), length(pNode) == 1)
-    stopifnot(is.numeric(prob), length(prob) == 1)
+    #stopifnot(is.numeric(prob), length(prob) == 1)
     stopifnot(name %ni% colnames(df))
     print(self$node_list[pNode])
     self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'decision',route = route,p=prob))
