@@ -1,5 +1,5 @@
-rm(list=ls())
-setwd("C:/Users/ravid/Documents/Work/AD616/package/AD616")
+#rm(list=ls())
+#setwd("C:/Users/ravid/Documents/Work/AD616/package/AD616")
 source('R/utility.R')
 library(R6)
 library(data.tree)
