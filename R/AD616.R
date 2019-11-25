@@ -72,7 +72,7 @@ Tree <- R6Class("Decision Trees", list(
       }
     }
     self$root[[1]]$Do(payoff, traversal = "post-order", filterFun = isNotLeaf)
-    self$GetNodeLabel= function(node) switch(node$type, terminal=node$payoff, chance=paste("EV =",node$payoff),decision=paste(node$name,"EMV =",node$payoff),branch=node$name)
+    self$GetNodeLabel= function(node) switch(node$type, terminal=node$payoff, chance=paste(node$name,"(EV =",node$payoff,")"),decision=paste(node$name,"(EMV =",node$payoff,")"),branch=node$name)
     SetNodeStyle(self$root[[1]], fontname = 'helvetica', fontsize=18,shape = self$GetNodeShape, label = self$GetNodeLabel)
   },
   update_utility = function(R){
