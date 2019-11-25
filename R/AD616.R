@@ -55,11 +55,11 @@ Tree <- R6Class("Decision Trees", list(
     stopifnot(name %ni% colnames(df))
     self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'chance',route = route,cost=cost))
   },
-  addTerminal = function(pNode,name,prob,payoff){
+  addTerminal = function(pNode,name,prob=1.0,payoff,route=''){
     stopifnot(is.character(name), length(name) == 1)
     stopifnot(is.character(pNode), length(pNode) == 1)
     stopifnot(is.numeric(payoff), length(payoff) == 1)
-    stopifnot(is.numeric(prob), length(prob) == 1)
+    #stopifnot(is.numeric(prob), length(prob) == 1)
     stopifnot(name %ni% colnames(df))
     self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'terminal',payoff=payoff,p=prob))
   },
