@@ -10,6 +10,7 @@ Tree <- R6Class("Decision Trees", list(
   GetNodeLabel = NULL,
   GetNodeShape = NULL,
   node_list = c(),
+  emv_val = 0,
   initialize = function(name,type='decision') {
     stopifnot(is.character(name), length(name) == 1)
     self$name <- name
@@ -48,14 +49,14 @@ Tree <- R6Class("Decision Trees", list(
     print(self$node_list[pNode])
     self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'decision',route = route,p=prob))
   },
-  addChance = function(pNode,name,cost,route=''){
+  addChance = function(pNode,name,cost,route='',prob=1){
     stopifnot(is.character(name), length(name) == 1)
     stopifnot(is.character(pNode), length(pNode) == 1)
     stopifnot(is.numeric(cost), length(cost) == 1)
     stopifnot(name %ni% colnames(df))
-    self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'chance',route = route,cost=cost))
+    self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'chance',route = route,cost=cost,prob=prob))
   },
-  addTerminal = function(pNode,name,prob=1.0,payoff,route=''){
+  addTerminal = function(pNode,name,prob=1.0,payoff){
     stopifnot(is.character(name), length(name) == 1)
     stopifnot(is.character(pNode), length(pNode) == 1)
     stopifnot(is.numeric(payoff), length(payoff) == 1)
@@ -67,11 +68,11 @@ Tree <- R6Class("Decision Trees", list(
     payoff <- function(node) {
       if (node$type == 'chance') node$payoff = node$cost + sum(sapply(node$children, function(child) child$payoff * child$p))
       else if (node$type == 'decision') {
-        print (node$children)
         node$payoff <-  max(sapply(node$children, function(child) child$payoff))
       }
     }
     self$root[[1]]$Do(payoff, traversal = "post-order", filterFun = isNotLeaf)
+    emv_val = self$root[[1]]$payoff
     self$GetNodeLabel= function(node) switch(node$type, terminal=node$payoff, chance=paste(node$name,"(EV =",node$payoff,")"),decision=paste(node$name,"(EMV =",node$payoff,")"),branch=node$name)
     SetNodeStyle(self$root[[1]], fontname = 'helvetica', fontsize=18,shape = self$GetNodeShape, label = self$GetNodeLabel)
   },
