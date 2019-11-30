@@ -54,7 +54,7 @@ Tree <- R6Class("Decision Trees", list(
     stopifnot(is.character(pNode), length(pNode) == 1)
     stopifnot(is.numeric(cost), length(cost) == 1)
     stopifnot(name %ni% colnames(df))
-    self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'chance',route = route,cost=cost,prob=prob))
+    self$node_list[name] <- list(self$node_list[pNode][[1]]$AddChild(name, type = 'chance',route = route,cost=cost,p=prob))
   },
   addTerminal = function(pNode,name,prob=1.0,payoff){
     stopifnot(is.character(name), length(name) == 1)
