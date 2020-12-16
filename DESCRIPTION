@@ -1,7 +1,7 @@
 Package: AD616
 Type: Package
 Title: Decision Trees and Stochastic Optimization
-Version: 0.5.0
+Version: 0.6.1
 Author: Ravi Doddavaram
 Maintainer: The package maintainer <ravid@bu.edu>
 Description: This is a part of the AD616 course on Enterprise Risk Analytics. The package uses the 

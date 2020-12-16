@@ -1,9 +1,9 @@
 {
-    "path" : "~/Work/AD_Pack/AD616",
-    "sortOrder" : [
+    "path": "~/Work/AD_Pack/AD616",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "ascending": true,
+            "columnIndex": 2
         }
     ]
 }
