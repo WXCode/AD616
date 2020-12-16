@@ -37,8 +37,8 @@ The optimal decision path can be accessed at
     `new_tree$DecisionPath`
  
  
- #### Calculating Utility function
- To calculate the Utility of the decision analysis, invoke update_utility from the root node. 
+##### Calculating Utility function
+To calculate the Utility of the decision analysis, invoke update_utility from the root node. 
     `new_tree$update_utility()`
 
 
