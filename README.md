@@ -28,8 +28,20 @@ To add a chance node, use the tree that was created and define the parent node w
 ##### Adding a terminal node
 To add a terminal node, use the tree that was created and define the parent node where the terminal node needs to connect to. A terminal is an experiment and there is always a payoff attached to it. If the parent node is a chance event then add the probability from the chance event that leads to the terminal node
     `new_tree$addTerminal(name='term_1',parent='chance_1',prob,payoff)`
+    
+##### Calculating EMV 
+To calculate the EMV of the decision Tree, invoke update_payoff() function from the root node.
+    `new_tree$update_payoff()`
+This will automatically traverse through the decision tree and calculate the EMV
+The optimal decision path can be accessed at 
+    `new_tree$DecisionPath`
+ 
+ 
+ #### Calculating Utility function
+ To calculate the Utility of the decision analysis, invoke update_utility from the root node. 
+    `new_tree$update_utility()`
 
 
 
 ## Acknowledgements
-We make use of the `data.tree` package heavily in creating the graphical models. We also use stats package and R6 package for creating the utility functions
+We make use of the `data.tree` package heavily in creating the graphical models. We also use stats package and R6 package.
